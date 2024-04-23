@@ -33,6 +33,9 @@ static void JuegoAccion()
     videojuegoAccion.Calificacion = 70;
     videojuegoAccion.AnioLanzamiento = 2019;
     videojuegoAccion.MostrarInformacion();
+
+    //videojuegoAccion.EmpuniarArma();
+    Console.WriteLine(videojuegoAccion.UtilizarArma());
     
 }
 
@@ -45,6 +48,10 @@ static void JuegoAventura()
     videojuegoAventura.AnioLanzamiento = 2023;
     videojuegoAventura.MostrarInformacion();
 
+    Console.WriteLine(videojuegoAventura.GuardarPartida());
+    Console.WriteLine("Partida Guardada: "+videojuegoAventura.partidaguardada);
+    Console.WriteLine(videojuegoAventura.MostrarDialogo());
+
 }
 
 static void JuegoCarreras()
@@ -55,6 +62,8 @@ static void JuegoCarreras()
     videojuegoCarreras.Calificacion = 80;
     videojuegoCarreras.AnioLanzamiento = 2014;
     videojuegoCarreras.MostrarInformacion();
+
+    Console.WriteLine(videojuegoCarreras.Acelerar());
 }
 
 //Laboratorio();

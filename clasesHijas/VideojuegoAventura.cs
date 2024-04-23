@@ -11,7 +11,7 @@ namespace LaboratorioProgra1.clasesHijas
     internal class VideojuegoAventura:VideoJuego
     {
         private int nivel;
-        private bool partidaguardada;
+        public bool partidaguardada;
 
         public int Nivel
         { get { return nivel; }
@@ -61,14 +61,14 @@ namespace LaboratorioProgra1.clasesHijas
             {
                 return "Lo siento, Tu nivel es muy bajo para que pueda hablarte :(";
             }
-            return "Felicidades!! Haz alcanzado el nivel" +nivel+" Te regalo una replica 1.1 del Halcon Milenario de Star Wars";
+            return "Felicidades!! Haz alcanzado el nivel " +nivel+" Te regalo una replica 1.1 del Halcon Milenario de Star Wars";
         }
 
         public override void MostrarInformacion()
         {
             base.MostrarInformacion();
             Console.WriteLine("Nivel: " + nivel);
-            Console.WriteLine("Partida Guardada " + partidaguardada);
+            Console.WriteLine("Partida Guardada: " + partidaguardada);
         }
 
     }

@@ -11,7 +11,7 @@ namespace LaboratorioProgra1.clasesHijas
     {
         private string personaje;
         private string arma;
-
+        public bool armaEmpuñada;
         public string Personaje
         { get { return personaje; } set { personaje = value; } }
         public string Arma {  get { return arma; } set {  arma = value; } }
@@ -22,20 +22,21 @@ namespace LaboratorioProgra1.clasesHijas
             arma = a;
         }
 
-        public bool EmpuniarArma()
-        {
-            return true;
+        public void EmpuniarArma()
+        { 
+
+             armaEmpuñada= true;
         }
 
         public string UtilizarArma()
         {
-            if (EmpuniarArma() == true)
+            if (armaEmpuñada == true)
             {
                 return "El arma se ha utilizado";
             }
             else
             {
-                return "Primero debes empuniar el arma";
+                return "Primero debes empuñar el arma";
             }
         }
 
