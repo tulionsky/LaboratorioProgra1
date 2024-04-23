@@ -1,4 +1,5 @@
-﻿using LaboratorioProgra1.Laboratorio;
+﻿using LaboratorioProgra1.EjemploEncapsulamiento;
+using LaboratorioProgra1.Laboratorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +10,66 @@ namespace LaboratorioProgra1.clasesHijas
 {
     internal class VideojuegoAventura:VideoJuego
     {
-        private string personaje;
-        private string arma;
+        private int nivel;
+        private bool partidaguardada;
 
-        public string Personaje
-        { get { return personaje; } set { personaje = value; } }
-        public string Arma { get { return arma; } set { arma = value; } }
-
-        public VideojuegoAventura(string p, string a)
-        {
-            personaje = p;
-            arma = a;
-        }
-
-        public bool EmpuniarArma()
-        {
-            return true;
-        }
-
-        public string UtilizarArma()
-        {
-            if (EmpuniarArma() == true)
+        public int Nivel
+        { get { return nivel; }
+            set
             {
-                return "El arma se ha utilizado";
+                // Validación para asegurarse de que la edad es válida
+                if (value > 0 && value<=20)
+                {
+                    Nivel = value;
+                }
+                else
+                {
+                    comprobarnivel(value);
+                    
+                }
+            }
+        }
+
+        public string comprobarnivel(int niv)
+        {
+            if (niv < 0)
+            {
+                return "Lo siento, no puedes ser nivel 0 o inferior.";
             }
             else
             {
-                return "Primero debes empuniar el arma";
+                return "Lo siento, no se puede tener un nivel mayor a 20.";
             }
         }
+        public string PartidaGuardada { get; set; }
 
-        public override void MenuPrincipal()
+        public VideojuegoAventura(int n, bool pg)
         {
-            Console.WriteLine("Bienvenido al menu del juego de Accion :)");
+            nivel = n;
+            partidaguardada = pg;
         }
+
+        public string GuardarPartida()
+        {
+            partidaguardada = true;
+            return "Su Partida se ha guardado correctamente!";
+        }
+
+        public string MostrarDialogo()
+        {
+            if (nivel < 10)
+            {
+                return "Lo siento, Tu nivel es muy bajo para que pueda hablarte :(";
+            }
+            return "Felicidades!! Haz alcanzado el nivel" +nivel+" Te regalo una replica 1.1 del Halcon Milenario de Star Wars";
+        }
+
+        public override void MostrarInformacion()
+        {
+            base.MostrarInformacion();
+            Console.WriteLine("Nivel: " + nivel);
+            Console.WriteLine("Partida Guardada " + partidaguardada);
+        }
+
     }
 }

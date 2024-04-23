@@ -64,12 +64,13 @@ namespace LaboratorioProgra1.Laboratorio
             }
         }
 
-        public void MostrarInformacion()
+        public virtual void MostrarInformacion()
         {
-            Console.WriteLine("Título: " + Titulo);
+            Console.WriteLine("\nTítulo: " + Titulo);
             Console.WriteLine("Desarrolladora: " + Desarrolladora);
             Console.WriteLine("Calificación: " + Calificacion);
             Console.WriteLine("Año de Lanzamiento: " + AnioLanzamiento);
+          
         }
 
         public static void saludo()

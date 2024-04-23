@@ -1,4 +1,5 @@
-﻿using LaboratorioProgra1.Laboratorio;
+﻿using LaboratorioProgra1.EjemploEncapsulamiento;
+using LaboratorioProgra1.Laboratorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +10,35 @@ namespace LaboratorioProgra1.clasesHijas
 {
     internal class VideojuegoCarreras:VideoJuego
     {
-        private string personaje;
-        private string arma;
+        private string vehiculo;
+        private string pista;
 
-        public string Personaje
-        { get { return personaje; } set { personaje = value; } }
-        public string Arma { get { return arma; } set { arma = value; } }
+        public string Vehiculo
+        { get { return vehiculo; } set { vehiculo = value; } }
+        public string Pista { get { return pista; } set { pista = value; } }
 
-        public VideojuegoCarreras(string p, string a)
+        public VideojuegoCarreras(string v, string ps)
         {
-            personaje = p;
-            arma = a;
+            vehiculo = v;
+            pista = ps;
         }
 
-        public bool EmpuniarArma()
+        public string  Acelerar()
         {
-            return true;
+            return "Tu vehiculo esta acelerando";
         }
 
-        public string UtilizarArma()
+        public string MostrarVehiculo()
         {
-            if (EmpuniarArma() == true)
-            {
-                return "El arma se ha utilizado";
-            }
-            else
-            {
-                return "Primero debes empuniar el arma";
-            }
+            return "Vehiculo: " + vehiculo;
         }
 
-        public override void MenuPrincipal()
+        public override void MostrarInformacion()
         {
-            Console.WriteLine("Bienvenido al menu del juego de Accion :)");
+            base.MostrarInformacion();
+            Console.WriteLine(MostrarVehiculo());
+            Console.WriteLine("Pista: " + pista);
         }
+
     }
 }

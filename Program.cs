@@ -1,6 +1,7 @@
 ﻿using LaboratorioProgra1.EjemploPolimorfismo;
 using LaboratorioProgra1.EjemploPolimorfismo.Heredados;
 using LaboratorioProgra1.Laboratorio;
+using LaboratorioProgra1.clasesHijas;
 
 static void EjemploPolimorfismo()
 {
@@ -24,8 +25,40 @@ static void Laboratorio()
     videoJuego.MostrarInformacion();
 }
 
+static void JuegoAccion()
+{
+    VideojuegoAccion videojuegoAccion = new VideojuegoAccion("Travis","Beam Katana");
+    videojuegoAccion.Titulo = "No More Heroes";
+    videojuegoAccion.Desarrolladora = "GRASSHOPPER MANUFACTURE";
+    videojuegoAccion.Calificacion = 70;
+    videojuegoAccion.AnioLanzamiento = 2019;
+    videojuegoAccion.MostrarInformacion();
+    
+}
+
+static void JuegoAventura()
+{
+    VideojuegoAventura videojuegoAventura = new VideojuegoAventura(10, false);
+    videojuegoAventura.Titulo = "The Legend Of Zelda Tears of The Kingdom";
+    videojuegoAventura.Desarrolladora = "NIntendo";
+    videojuegoAventura.Calificacion = 95;
+    videojuegoAventura.AnioLanzamiento = 2023;
+    videojuegoAventura.MostrarInformacion();
+
+}
+
+static void JuegoCarreras()
+{
+    VideojuegoCarreras videojuegoCarreras = new VideojuegoCarreras("Halcon Milenario", "Rainbow Road");
+    videojuegoCarreras.Titulo = "Mario Kart";
+    videojuegoCarreras.Desarrolladora = "Nintendo";
+    videojuegoCarreras.Calificacion = 80;
+    videojuegoCarreras.AnioLanzamiento = 2014;
+    videojuegoCarreras.MostrarInformacion();
+}
+
 //Laboratorio();
-VideoJuego.listaDeJuegos();
-
-
-
+//VideoJuego.listaDeJuegos();
+JuegoAccion();
+JuegoAventura();
+JuegoCarreras();

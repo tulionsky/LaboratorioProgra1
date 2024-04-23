@@ -39,11 +39,13 @@ namespace LaboratorioProgra1.clasesHijas
             }
         }
 
-        public override void MenuPrincipal()
+        public override void MostrarInformacion()
         {
-            Console.WriteLine("Bienvenido al menu del juego de Accion :)");
+            base.MostrarInformacion();
+            Console.WriteLine("Personaje: " + personaje);
+            Console.WriteLine("Arma: " + arma);
         }
-
+        
 
     }
 }
